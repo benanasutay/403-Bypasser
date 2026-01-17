@@ -30,12 +30,12 @@ Aggressive Mixed-Case path manipulation (Bit-flipping).
 🤖 WAF Evasion: Dynamic delay adjustment when Rate Limiting (429) or WAF Ban (403) is detected.
 
 🔧 Options
-Flag,Description
-"-u, --url",Target URL (must return 403).
+
+-u, --url",Target URL (must return 403).
 --http2,Critical: Enable HTTP/2 protocol (highly recommended).
---waf-detect,"Analyze response to identify WAF (Cloudflare, AWS, Akamai, etc.)."
+--waf-detect,"Analyze response to identify WAF (Cloudflare, AWS, Akamai, etc.).
 --wayback,Fetch historical 200 OK snapshots from Archive.org.
-"-T, --threads",Number of concurrent threads (Default: 1).
-"-d, --delay",Delay in ms (Auto-adjusts on Rate Limit).
-"-o, --output",Output file (.jsonl recommended for safety).
+-T, --threads",Number of concurrent threads (Default: 1).
+-d, --delay",Delay in ms (Auto-adjusts on Rate Limit).
+-o, --output",Output file (.jsonl recommended for safety).
 --proxy,Proxy URL (e.g. http://127.0.0.1:8080 for Burp).
