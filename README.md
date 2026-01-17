@@ -28,7 +28,6 @@ Aggressive Mixed-Case path manipulation (Bit-flipping).
 💾 Crash-Safe Output: Uses .jsonl (Append-Only) format. No data loss even if the tool crashes mid-scan.
 
 🤖 WAF Evasion: Dynamic delay adjustment when Rate Limiting (429) or WAF Ban (403) is detected.
-
 ## 🔧 Options
 
 | Flag | Description | Recommendation |
@@ -39,6 +38,7 @@ Aggressive Mixed-Case path manipulation (Bit-flipping).
 | `--wayback` | Scrapes Archive.org for historical 200 OK snapshots and sensitive data mining (API keys, endpoints). | Use for deep recon. |
 | `-T`, `--threads` | Number of concurrent threads. | `1` for strict WAFs, `10+` for speed. |
 | `-d`, `--delay` | Delay between requests in milliseconds. **Auto-adjusts** if Rate Limiting is detected. | `200` for standard, `1000` for stealth. |
+| `-t`, `--timeout` | Max time (in seconds) to wait for a server response. | Default: `10`s. Increase for slow VPNs. |
 | `-o`, `--output` | Output file path. Supports `.txt`, `.json`, and `.jsonl`. | Use `.jsonl` for crash safety. |
 | `-H`, `--header` | Add custom headers (Cookies, Auth tokens). Can be used multiple times. | `-H "Cookie: sess=xyz"` |
 | `-p`, `--proxy` | Send traffic through a proxy (e.g., Burp Suite, ZAP). | `http://127.0.0.1:8080` |
