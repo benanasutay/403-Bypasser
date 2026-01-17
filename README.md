@@ -29,3 +29,20 @@ Aggressive Mixed-Case path manipulation (Bit-flipping).
 
 🤖 WAF Evasion: Dynamic delay adjustment when Rate Limiting (429) or WAF Ban (403) is detected.
 
+## 🔧 Options
+
+| Flag | Description | Recommendation |
+| :--- | :--- | :--- |
+| `-u`, `--url` | **Required.** Target URL to scan (must return 403 Forbidden). | `https://target.com/admin` |
+| `--http2` | **Critical.** Enables HTTP/2 protocol support using `httpx`. Highly recommended to bypass legacy WAF rules. | Always use this! |
+| `--waf-detect` | Analyzes response headers/cookies to identify the WAF (Cloudflare, AWS, Akamai, etc.). | Use on first scan. |
+| `--wayback` | Scrapes Archive.org for historical 200 OK snapshots and sensitive data mining (API keys, endpoints). | Use for deep recon. |
+| `-T`, `--threads` | Number of concurrent threads. | `1` for strict WAFs, `10+` for speed. |
+| `-d`, `--delay` | Delay between requests in milliseconds. **Auto-adjusts** if Rate Limiting is detected. | `200` for standard, `1000` for stealth. |
+| `-o`, `--output` | Output file path. Supports `.txt`, `.json`, and `.jsonl`. | Use `.jsonl` for crash safety. |
+| `-H`, `--header` | Add custom headers (Cookies, Auth tokens). Can be used multiple times. | `-H "Cookie: sess=xyz"` |
+| `-p`, `--proxy` | Send traffic through a proxy (e.g., Burp Suite, ZAP). | `http://127.0.0.1:8080` |
+| `--force` | Non-interactive mode. Skips "Continue?" prompts. | Essential for CI/CD or Cron jobs. |
+| `-v`, `--verbose` | Enable verbose output to see all attempts and failure reasons. | Good for debugging. |
+| `--follow-redirects`| Follow HTTP 3xx redirects automatically. | Default: `False` |
+
