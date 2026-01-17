@@ -32,13 +32,20 @@ Aggressive Mixed-Case path manipulation (Bit-flipping).
 ⚡ Usage
 🚀 Production Scan (Recommended)
 Enable HTTP/2, WAF detection, and Wayback mining:
-python3 403_bypasser.py -u [https://target.com/admin](https://target.com/admin) --http2 --waf-detect --wayback
 
+Bash
+
+python3 403_bypasser.py -u [https://target.com/admin](https://target.com/admin) --http2 --waf-detect --wayback
 🤖 CI/CD & Automation
 Safe for cron jobs (non-interactive, JSON output):
-python3 403_bypasser.py -u [https://target.com/secret](https://target.com/secret) -o results.jsonl --force
 
+Bash
+
+python3 403_bypasser.py -u [https://target.com/secret](https://target.com/secret) -o results.jsonl --force
 🕵️ Authenticated Scan
 Test with cookies/tokens to simulate authorized users:
+
+Bash
+
 python3 403_bypasser.py -u [https://target.com/admin](https://target.com/admin) -H "Cookie: session=xyz"
 
