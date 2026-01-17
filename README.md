@@ -50,18 +50,23 @@ Aggressive Mixed-Case path manipulation (Bit-flipping).
 
 ### 🚀 Production Scan (Recommended)
 This mode enables all advanced features: HTTP/2 for WAF evasion, auto-WAF detection, and historical mining via Wayback Machine.
+
 python3 403_bypasser.py -u https://target.com/admin --http2 --waf-detect --wayback
 
 
 ### 🤖 CI/CD & Automation
 Designed for cron jobs or pipelines. Runs without user interaction (`--force`) and saves results in a crash-safe JSON Lines format (`.jsonl`).
+
 python3 403_bypasser.py -u https://target.com/secret -o results.jsonl --force
 
 
 ### 🕵️ Authenticated Scan
 Simulate an authorized user by passing session cookies or JWT tokens. Essential for testing internal endpoints that require login.
+
 python3 403_bypasser.py -u https://target.com/admin -H "Cookie: session=xyz"
 
-*You can also add multiple headers:
+
+*You can also add multiple headers:*
+
 python3 403_bypasser.py -u https://target.com/api -H "Authorization: Bearer <token>" -H "X-Custom-ID: 123"
 
