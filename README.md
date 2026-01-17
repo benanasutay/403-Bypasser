@@ -28,24 +28,3 @@ Aggressive Mixed-Case path manipulation (Bit-flipping).
 💾 Crash-Safe Output: Uses .jsonl (Append-Only) format. No data loss even if the tool crashes mid-scan.
 
 🤖 WAF Evasion: Dynamic delay adjustment when Rate Limiting (429) or WAF Ban (403) is detected.
-
-⚡ Usage
-🚀 Production Scan (Recommended)
-Enable HTTP/2, WAF detection, and Wayback mining:
-
-Bash
-
-python3 403_bypasser.py -u [https://target.com/admin](https://target.com/admin) --http2 --waf-detect --wayback
-🤖 CI/CD & Automation
-Safe for cron jobs (non-interactive, JSON output):
-
-Bash
-
-python3 403_bypasser.py -u [https://target.com/secret](https://target.com/secret) -o results.jsonl --force
-🕵️ Authenticated Scan
-Test with cookies/tokens to simulate authorized users:
-
-Bash
-
-python3 403_bypasser.py -u [https://target.com/admin](https://target.com/admin) -H "Cookie: session=xyz"
-
